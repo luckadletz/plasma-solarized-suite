@@ -1,0 +1,3 @@
+[submodule "Font"]
+	path = Font
+	url = https://github.com/tonsky/FiraCode.git
