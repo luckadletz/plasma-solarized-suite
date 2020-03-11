@@ -1,0 +1,50 @@
+mapping
+
+__BASE
+
+_BG_Dark_Base_3 (base 03)
+1e1e1e
+211f1d
+292624
+3c3c3c
+282828
+
+_BG_Highlights (base 02)
+5a5a5a
+555555
+
+c8c8c8 ??
+
+__BUTTON (base 1)
+f6f6f6 -> 93a1a1
+
+__TEXT
+
+_Secondary_Text (base 01)
+252525
+999999
+303030
+404040
+
+_Body_Text (base 0)
+e5e5e5
+efefef
+787878
+8d8d8d
+d1d1d1
+e0e0e0
+e1e1e1
+
+_Emphasis (base 1)
+f1f1f1
+ffffff
+f6f6f6
+f0f0f0
+f6f6f6
+
+
+_LINK 
+4AAFF7 -> 268bd2
+2aa198 -> 2aa198
+452886 -> 6c71c4
+f14b4b -> dc322f
