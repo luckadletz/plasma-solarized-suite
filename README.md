@@ -27,6 +27,9 @@ Original from: https://git.auteiy.me/dmitry/cursorsPosy/-/archive/master/cursors
 TODO: All of it, maybe some redesign
 Tutorial: https://git.auteiy.me/dmitry/creatingCursors
 
+## Startpage: Custom Browser Startpage
+Customize links & set as homepage
+
 ## Plasma (Desktop elements): Mojave-CT Dark Custom Solarized
 From: https://github.com/zayronxio/Plasma-MojaveCT/
 Light theme is included as an alternative.
