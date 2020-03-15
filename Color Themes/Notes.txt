@@ -1,0 +1,3 @@
+Modified from Nordic colors
+Place SolarizedDark.colors in:
+~/.local/share/color-schemes

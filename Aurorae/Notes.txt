@@ -1,2 +1,15 @@
- From:
+From:
  https://store.kde.org/p/1252329/
+
+Button colors:
+	Close - Red - dc322f
+	Max - Cyan - 2aa198
+	Min - Yellow - b58900
+	Pin - Magenta - d33682
+	All - Green - 859900
+
+Hover - Base 1 [Too light]
+Outline - Base 01
+Inactive - Base 02
+Deactivated - Base 02
+Press - Base 03

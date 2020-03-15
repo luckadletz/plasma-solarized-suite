@@ -1,0 +1,7 @@
+From  https://github.com/mcder3/Helium-Plasma-Theme
+
+Place in:
+~/.local/share/plasma/desktoptheme
+
+TODO:
+All of it.

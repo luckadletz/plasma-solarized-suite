@@ -1,0 +1,3 @@
+From https://git.auteiy.me/dmitry/cursorsPosy
+
+To install: Copy themes\* to \usr\share\icons\
