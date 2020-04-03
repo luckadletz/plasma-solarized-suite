@@ -1,3 +1,6 @@
-From https://git.auteiy.me/dmitry/cursorsPosy
+From https://github.com/varlesh/oreo-cursors
 
-To install: Copy themes\* to \usr\share\icons\
+To install:
+cd oreo-cursors
+make build
+sudo make install

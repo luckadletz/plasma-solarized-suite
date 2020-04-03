@@ -9,13 +9,17 @@
 }
 
 @font-face {
-	/* LICENSE: "font/SIL Open Font License.txt" font by Julieta Ulanovsky */
-	src: url(font/Montserrat-Regular.otf);
-	font-family: Montserrat;
+	src: url(font/EncodeSans-Regular.ttf);
+	font-family: Encode Sans;
+}
+
+@font-face {
+	src: url(font/FiraCode-Regular.ttf);
+	font-family: Fira Code;
 }
 
 html, body {
-	font-family: Montserrat;
+	font-family: Encode Sans;
 	overflow-x: hidden;
 }
 
@@ -40,7 +44,7 @@ body > div#main {
 }
 
 body > div#main > span > div#static_links {
-	font-family: Terminus, Montserrat;
+	font-family: Fira Code, Encode Sans;
 	background-color: var(--hdr);
 	margin: 2px 2px 0px 2px;
 	box-sizing: border-box;
@@ -79,7 +83,7 @@ body > div#main > span > div#static_links > a + a {
 
 body > div#main > span > form > input {
 	background-color: var(--frg);
-	font-family: Montserrat;
+	font-family: Encode Sans;
 	margin: 0px 2px 2px 2px;
 	box-sizing: border-box;
 	color: var(--txt);

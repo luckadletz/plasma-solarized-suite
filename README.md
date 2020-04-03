@@ -22,10 +22,9 @@ Work sans is included as an alternative.
 Fira-code supports ligatures, which may take some extra installation.
 
 ## Cursor: Posy-Black-Tiny Custom Solarized
-Original from: https://git.auteiy.me/dmitry/cursorsPosy/-/archive/master/cursorsPosy-master.tar.gz?path=themes
+Original from: https://github.com/varlesh/oreo-cursors
 
-TODO: All of it, maybe some redesign
-Tutorial: https://git.auteiy.me/dmitry/creatingCursors
+TODO: Recolor, ADD CONTRAST
 
 ## Startpage: Custom Browser Startpage
 Customize links & set as homepage
