@@ -1,0 +1,119 @@
+[ColorEffects:Disabled]
+<BASE03> Color=0,43,54
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
+IntensityAmount=0.1
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+<BASE02> Color=7,54,66
+ColorAmount=0.025
+ColorEffect=2
+ContrastAmount=0.1
+ContrastEffect=2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+<BASE02> BackgroundAlternate=7,54,66
+<BASE03> BackgroundNormal=0,43,54
+<BLUE> DecorationFocus=38,139,210 
+<BLUE> DecorationHover=38,139,210
+ForegroundActive=61,174,233
+ForegroundInactive=189,195,199
+ForegroundLink=41,128,185
+ForegroundNegative=30,171,240
+ForegroundNeutral=246,116,0
+ForegroundNormal=222,222,222
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[Colors:Complementary]
+BackgroundAlternate=66,66,66
+<BASE03> BackgroundNormal=0,43,54
+<BLUE> DecorationFocus=38,139,210
+<BLUE> DecorationHover=38,139,210
+ForegroundActive=246,116,0
+ForegroundInactive=136,136,136
+<BLUE> ForegroundLink=38,139,210
+ForegroundNegative=237,21,21
+ForegroundNeutral=201,206,59
+ForegroundNormal=222,222,222
+ForegroundPositive=17,209,22
+<BLUE> ForegroundVisited=38,139,210
+
+[Colors:Selection]
+BackgroundAlternate=79,127,239
+<BLUE> BackgroundNormal=38,139,210
+DecorationFocus=255,255,255
+DecorationHover=255,255,255
+ForegroundActive=252,252,252
+ForegroundInactive=130,156,239
+ForegroundLink=253,188,75
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=255,255,255
+ForegroundPositive=39,174,96
+ForegroundVisited=128,152,239
+
+[Colors:Tooltip]
+<BASE02> BackgroundAlternate=7,54,66
+<BASE03> BackgroundNormal=0,43,54
+<BLUE> DecorationFocus=38,139,210
+<BLUE> DecorationHover=38,139,210
+<BLUE> ForegroundActive=38,139,210
+ForegroundInactive=189,195,199
+<BLUE> ForegroundLink=38,139,210
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=222,222,222
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[Colors:View]
+BackgroundAlternate=48,48,48
+BackgroundNormal=36,36,36
+<BLUE> DecorationFocus=38,139,210
+<BLUE> DecorationHover=38,139,210
+<BLUE> ForegroundActive=38,139,210
+ForegroundInactive=136,136,136
+<BLUE> ForegroundLink=38,139,210
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=222,222,222
+ForegroundPositive=39,174,96
+ForegroundVisited=120,120,120
+
+[Colors:Window]
+BackgroundAlternate=66,66,66
+BackgroundNormal=0,43,54
+<BLUE> DecorationFocus=38,139,210
+<BLUE> DecorationHover=38,139,210
+<BLUE> ForegroundActive=38,139,210
+ForegroundInactive=136,136,136
+<BLUE> ForegroundLink=38,139,210
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=222,222,222
+ForegroundPositive=39,174,96
+ForegroundVisited=120,120,120
+
+[General]
+ColorScheme=Mojave-CT-Solarized-Dark
+Name=Mojave-CT-Solarized-Dark
+shadeSortColumn=true
+
+[KDE]
+contrast=4
+
+[WM]
+activeBackground=0,43,54
+activeBlend=171,171,171
+activeForeground=222,222,222
+inactiveBackground=66,66,66
+inactiveBlend=85,85,85
+inactiveForeground=120,120,120
