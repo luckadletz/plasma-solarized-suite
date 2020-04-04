@@ -1,5 +1,5 @@
 [submodule "Font"]
-	path = Font
+	path = Font/fira-code
 	url = https://github.com/tonsky/FiraCode.git
 [submodule "Icons"]
 	path = Icons
