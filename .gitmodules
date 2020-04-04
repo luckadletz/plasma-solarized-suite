@@ -4,9 +4,6 @@
 [submodule "Icons"]
 	path = Icons
 	url = https://github.com/madmaxms/iconpack-obsidian.git
-[submodule "pureline"]
-	path = pureline
-	url = https://github.com/chris-marsh/pureline.git
 [submodule "Console/pureline"]
 	path = Console/pureline
 	url = https://github.com/chris-marsh/pureline.git
