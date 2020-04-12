@@ -1,11 +1,17 @@
 # Custom Nativefier web apps for Luc Kadletz
 
 BG_COLOR = 07364233
-OPTIONS = -n $@ -u luc --browserwindow-options '{"webPreferences":{"sandbox":false}}' --background-color $(BG_COLOR)
+
 BUILD_DIR = ./build
 PUB_DIR = /opt
 
-APPS = my-noise pomodoro google-calendar trello google-mail proton-mail netflix plex wolfram youtube shop-amazon
+OPTIONS = -n $@ \
+-u "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/73.0" \
+--browserwindow-options '{"webPreferences":{"sandbox":false}}' \
+--background-color $(BG_COLOR)
+# --internal-urls ".*?" \
+
+APPS = my-noise pomodoro google-calendar trello google-mail proton-mail netflix plex wikipedia wolfram youtube shop-amazon
 
 all : $(APPS)
 
@@ -49,6 +55,12 @@ netflix :
 plex : 
 	nativefier $(OPTIONS) --single-instance \
 	https://app.plex.tv/desktop $(BUILD_DIR)
+
+wikipedia :
+	nativefier $(OPTIONS) https://en.wikipedia.org/wiki/Main_Page $(BUILD_DIR)
+
+intuit-mint :
+	nativefier $(OPTIONS) https://mint.intuit.com/overview.event $(BUILD_DIR)
 
 wolfram : 
 	nativefier $(OPTIONS) https://www.wolframalpha.com/ $(BUILD_DIR)

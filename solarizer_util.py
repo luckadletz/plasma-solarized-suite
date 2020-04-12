@@ -73,7 +73,6 @@ def read_colors(target: str) -> [(int,int,int)]:
 			# add color to colors_found
 	return colors
 
-
-# Execute splash/main only if called directly
+# Execute only if called directly
 if __name__ == "__main__":
 	main(sys.argv[1:])
