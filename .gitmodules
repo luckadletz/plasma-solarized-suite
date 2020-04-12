@@ -7,3 +7,6 @@
 [submodule "Console/pureline"]
 	path = Console/pureline
 	url = https://github.com/chris-marsh/pureline.git
+[submodule "Spotify"]
+	path = Spotify
+	url = https://github.com/khanhas/spicetify-cli.git
