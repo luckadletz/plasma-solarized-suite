@@ -10,3 +10,9 @@
 [submodule "Spotify"]
 	path = Spotify
 	url = https://github.com/khanhas/spicetify-cli.git
+[submodule "Discord/Glasscord"]
+	path = Discord/Glasscord
+	url = https://github.com/AryToNeX/Glasscord.git
+[submodule "Discord/EnhancedDiscord"]
+	path = Discord/EnhancedDiscord
+	url = https://github.com/joe27g/EnhancedDiscord.git
