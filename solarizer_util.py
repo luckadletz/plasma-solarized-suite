@@ -5,7 +5,10 @@ For automatically replacing colors in text data,
 to be used for creating custom themes. ~ Luc Kadletz, 2020
 '''
 
-import sys, argparse
+import sys
+import argparse
+import re
+import json
 
 # The color palette we want to map to
 # The key is an idendifier for the color
@@ -30,9 +33,6 @@ colors_target = {
 	'green'		:(133, 153,   0),
 }
 
-# The colors found in the target file
-colors_found = []
-
 # The regex used to find & replace colors
 color_regex = '<r>,<g>,<b>'
 # capture groups should be r g b, 
@@ -46,13 +46,13 @@ def main(argv):
 	parser = argparse.ArgumentParser(description = welcome_text)
 	parser.add_argument('--target', required=True)
 	parser.add_argument('--mapping')
-	parser.add_argument('--map-only', action='store_true')
+	parser.add_argument('--map-only', action = 'store_true')
 	args = parser.parse_args()
 
-	read_colors(args.target)
-	# if mapping_file exists and not just_map
-		# load it
-	# else
+	colors_found = read_colors(args.target)
+	if(args.mapping):
+		mapping = load_mapping(mapping)
+	else
 		# generate map: colors_found colors_target
 		# save map (force = just_map)
 
@@ -64,13 +64,31 @@ def main(argv):
 				# replace found_color with target_color in line
 		# save modified target_file as target_file-mapping_file
 
-def read_colors(target: str) -> [(int,int,int)]:
-	print(f"Getting colors from \"{target}\"")
-	let colors = []
-	# load target_file
-	# for each line of target_file
-		# for each color regex matches
-			# add color to colors_found
+def save_mapping(path: str, color_map: {(int,int,int)}):
+	print(f"Saving color mapping to \"{path}\"")
+	with open(path, 'w') as mapping_file:
+		mapping_file.write(json.dump(color_map))
+
+def load_mapping(path: str) -> [(int,int,int)]:
+	with open(path, 'w') as mapping_file:
+		mapping = json.load(path)
+		print(f"Loaded color map from \"{target}\": {json.dumps(mapping)}")
+	return mapping
+
+def find_colors(line: str) -> [(int,int,int)]:
+	
+	pass
+
+def replace_colors(line:str, color_mapL )
+
+def read_colors(target_file: str) -> [(int,int,int)]:
+	colors = []
+
+	with open(target_file) as target:
+		print(f"Getting colors from \"{target}\"")
+		for line in target_file:
+			colors += find_colors(line)
+	
 	return colors
 
 # Execute only if called directly

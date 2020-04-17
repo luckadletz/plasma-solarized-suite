@@ -6,12 +6,13 @@ BUILD_DIR = ./build
 PUB_DIR = /opt
 
 OPTIONS = -n $@ \
--u "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/73.0" \
 --browserwindow-options '{"webPreferences":{"sandbox":false}}' \
 --background-color $(BG_COLOR)
 # --internal-urls ".*?" \
 
-APPS = my-noise pomodoro google-calendar trello google-mail proton-mail netflix plex wikipedia wolfram youtube shop-amazon
+APPS = my-noise pomodoro google-calendar trello google-mail proton-mail \
+netflix plex wikipedia wolfram youtube shop-amazon brainaural google-drive \
+microsoft-office khan-academy mit-open-courseware
 
 all : $(APPS)
 
@@ -66,8 +67,24 @@ wolfram :
 	nativefier $(OPTIONS) https://www.wolframalpha.com/ $(BUILD_DIR)
 
 youtube : 
-	nativefier $(OPTIONS) --single-instance \
-	https://www.youtube.com/ $(BUILD_DIR)
+	nativefier $(OPTIONS) https://www.youtube.com/ $(BUILD_DIR)
 
 shop-amazon :
 	nativefier $(OPTIONS) https://smile.amazon.com/ $(BUILD_DIR)
+
+brainaural :
+	nativefier $(OPTIONS) https://brainaural.com/ $(BUILD_DIR)
+
+google-drive :
+	nativefier $(OPTIONS) --internal-urls ".*?(google|drive).*?" \
+	https://drive.google.com/drive/my-drive $(BUILD_DIR)
+
+microsoft-office :
+	nativefier $(OPTIONS) --internal-urls ".*?(office|live|onedrive|onenote|).*?" \
+	https://www.office.com/?auth=1 $(BUILD_DIR)
+
+khan-academy :
+	nativefier $(OPTIONS) https://www.khanacademy.org/ $(BUILD_DIR)
+
+mit-open-courseware : 
+	nativefier $(OPTIONS) https://ocw.mit.edu/courses/ $(BUILD_DIR)
