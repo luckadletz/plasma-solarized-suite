@@ -1,6 +1,1 @@
-From https://github.com/varlesh/oreo-cursors
-
-To install:
-cd oreo-cursors
-make build
-sudo make install
+Vimix cursors from kde store

@@ -61,8 +61,6 @@ class ColorStringReplacer:
 
 	def replace_color_line(self, line: str) -> str:
 		replaced, count = re.subn(self._color_regex, self._replace_color_fn, line)
-		if(count != 0):
-			print(f"replaced {count} colors...")
 		return replaced
 
 	def replace_color(self, color_str: str) -> str:
@@ -77,6 +75,7 @@ class ColorStringReplacer:
 		replacement_color = self._target_colors[target_color_label]
 		# Get color str from color object
 		replacement_color_str = hex_from_color(replacement_color)
+		print(f"{color_str} --> {replacement_color_str}")
 		return replacement_color_str
 
 	def _find_color_label(self, target: Color) -> str:
@@ -91,7 +90,6 @@ class ColorStringReplacer:
 	def _replace_color_fn(self, color_match_obj):
 		color_str = color_match_obj[0]
 		replaced = self.replace_color(color_str)
-		print(f"{color_str} --> {replaced}")
 		return replaced
 
 
@@ -104,14 +102,17 @@ def color_from_hex(hex_str: str) -> Color:
 	return (r,g,b)
 
 def hex_from_color(color: Color) -> str:
-	return '#%02x%02x%02x' % color
+	return '#%02x%02x%02x' % color # OK WHY THOugh?
 
-def read_colors(target_file: str) -> ColorSet:
-	print(f"Getting colors from \"{target_file}\"")
+def read_colors(targets) -> ColorSet:
 	colors = set()
-	with open(target_file, "r") as target:
+	for target in targets:
+		print(f"Getting colors from {target.name}:")
+		file_colors = set()
 		for line in target:
-			colors.update(find_colors(line))
+			file_colors.update(find_colors(line))
+		print(file_colors)
+		colors.update(file_colors)
 	return list(colors)
 
 def find_colors(line: str) -> ColorSet:
@@ -127,39 +128,56 @@ def find_colors(line: str) -> ColorSet:
 	return list(colors)
 
 def map_colors(found_colors: ColorSet, target_colors: NamedColorSet) -> ColorMap:
-	# TODO Do some fancy k-clustering algo here
-	print(f"Generating color map for {len(found_colors)} colors")
+	print(f"Generating color map for {len(found_colors)} colors.")
 	map_ = dict()
 	for color in target_colors:
 		map_[color] = list()
-	map_["unlabeled"] = sorted(found_colors, key=lambda x : x[0]+x[1]+x[2])
+	# Default every color to the closest one
+	for color in found_colors:
+		label = guess_color(color, target_colors)
+		map_[label].append(color)
+
+	# map_["unlabeled"] = sorted(found_colors, key=lambda x : x[0]+x[1]+x[2])
 	return map_
 
+def guess_color(color: Color, options: NamedColorSet):
+	guess = "unlabeled"
+	best_dist = (255 * 3)
+	for label in options:
+		dist = color_dist(color, options[label])
+		if (dist < best_dist):
+			best_dist = dist
+			guess = label
+	return guess
+
+def color_dist(a: Color, b: Color):
+	# Manhattan dist
+	delta = (abs(a[0] - b[0]), abs(a[1] - b[1]), abs(a[2] - b[2]))
+	return delta[0] + delta[1] + delta[2]
+
 def save_mapping(path: str, color_map: ColorMap):
-	print(f"Saving color mapping to \"{path}\"")
+	print(f"Saving color mapping to {path}")
 	with open(path, 'w') as mapping_file:
 		mapping_file.write(json.dumps(color_map))
 
-def load_mapping(path: str) -> ColorSet:
-	mapping = ColorSet
-	with open(path, 'r') as mapping_file:
-		mapping = json.load(mapping_file)
-		print(f"Loaded color map from \"{path}\": {json.dumps(mapping)}")
+def load_mapping(map_file) -> ColorSet:
+	mapping = json.load(map_file)
+	print(f"Loaded color map from \"{map_file.name}\"")
+	for color in mapping:
+		# [num] color : [[values]]
+		print(f"[{len(mapping[color])}]\t{color}\t:{mapping[color]}")
 	return mapping
 
-def replace_colors(target_file: str, replaced_file: str, color_map: ColorMap):
-	print(f"Replacing colors in \"{target_file}\"")
-	replacer = ColorStringReplacer(color_map, SOLARIZED, COLOR_HEX_REGEX)
-
-	replaced = open(replaced_file,"w")
-	with open(target_file,"r") as target:
+def replace_colors(targets, color_map: ColorMap):
+	for target in targets:
+		print(f"Replacing colors in {target.name}:")
+		replacer = ColorStringReplacer(color_map, SOLARIZED, COLOR_HEX_REGEX)
+		replaced = open(f"solarized-{target.name}","w")
 		for line in target:
 			replaced_line = replacer.replace_color_line(line)
 			replaced.write(replaced_line)
-
-	replaced.close()
-
-	print(f"Colors have been replaced in {replaced_file}.")
+		replaced.close()
+		print(f"Colors have been replaced in {replaced.name}.\n")
 
 
 ### WORKFLOW ###
@@ -167,17 +185,17 @@ def replace_colors(target_file: str, replaced_file: str, color_map: ColorMap):
 def main(argv):
 	# Argument parsing
 	parser = argparse.ArgumentParser(description = welcome_text)
-	parser.add_argument('--target', required=True)
-	parser.add_argument('--mapping')
+	parser.add_argument('--target', type=argparse.FileType('r'), required=True, nargs='+')
+	parser.add_argument('--mapping', type=argparse.FileType('r'))
 	args = parser.parse_args()
 	# Either generate a map file or load one and apply
-	if(args.mapping):
-		mapping = load_mapping(args.mapping)
-		replace_colors(args.target, f"replaced_{args.target}", mapping)
-	else:
+	if(not args.mapping):
 		colors_found = read_colors(args.target)
 		mapping = map_colors(colors_found, SOLARIZED)
-		save_mapping(f"colors_{args.target}.json", mapping)
+		save_mapping("solarizer_map.json", mapping)
+	else:
+		mapping = load_mapping(args.mapping)
+		replace_colors(args.target, mapping)
 
 
 # Execute main only if called directly
