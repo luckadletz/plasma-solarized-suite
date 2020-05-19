@@ -1,4 +1,43 @@
  From:
  https://store.kde.org/p/1252328/
+ Sweet
 
-TODO: All of it
+## BUGS
+
+#0C0E15 is not a solarized color
+
+Tree lines are black (dark & light)
+
+Page outlines are black (dark & light)
+
+subwindow bg is pitch black (dark & light)
+
+Not sure if [GeneralColors] has too much overlapping colors
+
+Slider disabled/inactive blends in too much with the background (still)
+
+"fill/progress" disabled/inactive blends in too much with filled/active (dark & light)
+
+Spins unpressed bgcolor -> border color
+	pressed color magenta -> pressed color
+
+## DONE
+
+I think tri-state should be a color: yellow.
+
+Selected object tickbox transparency -> 100%
+
+Cannot see outline on pressed buttons
+	(flat buttons not as bad)
+	Gonna try RED.
+
+Slider "pressed" -> Base01
+
+window highlights -> colorful
+
+slider -> multi-colored :)
+
+Disabled progress bar is completely invisible 
+	(active v. inactive)
+
+Highlighted text -> 80%, used colors more than values
