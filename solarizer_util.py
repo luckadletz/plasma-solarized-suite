@@ -136,13 +136,16 @@ def map_colors(found_colors: ColorSet, target_colors: NamedColorSet) -> ColorMap
 	for color in found_colors:
 		label = guess_color(color, target_colors)
 		map_[label].append(color)
-
-	# map_["unlabeled"] = sorted(found_colors, key=lambda x : x[0]+x[1]+x[2])
+	# Sort colors by distance to target color
+	for color in map_:
+		compare = target_colors[color]
+		if(compare == None): continue
+		map_[color] = sorted(map_[color], key = lambda x : color_dist(x, compare))
 	return map_
 
 def guess_color(color: Color, options: NamedColorSet):
 	guess = "unlabeled"
-	best_dist = (255 * 3)
+	best_dist = (255 * 255 * 255) + 1
 	for label in options:
 		dist = color_dist(color, options[label])
 		if (dist < best_dist):
@@ -151,9 +154,19 @@ def guess_color(color: Color, options: NamedColorSet):
 	return guess
 
 def color_dist(a: Color, b: Color):
-	# Manhattan dist
-	delta = (abs(a[0] - b[0]), abs(a[1] - b[1]), abs(a[2] - b[2]))
-	return delta[0] + delta[1] + delta[2]
+	# weighted euclidian dist
+	# https://www.compuphase.com/cmetric.htm
+	del_r = abs(a[0] - b[0])
+	del_g = abs(a[1] - b[1])
+	del_b = abs(a[2] - b[2])
+	if(del_r > 128) : 
+		return ( 3 * del_r * del_r 
+		+ 4 * del_g * del_g 
+		+ 2 * del_b * del_b ) 
+	else:
+		return ( 2 * del_r * del_r 
+		+ 4 * del_g * del_g 
+		+ 3 * del_b * del_b ) 
 
 def save_mapping(path: str, color_map: ColorMap):
 	print(f"Saving color mapping to {path}")
@@ -192,6 +205,7 @@ def main(argv):
 	if(not args.mapping):
 		colors_found = read_colors(args.target)
 		mapping = map_colors(colors_found, SOLARIZED)
+		# TODO Add --force...	:(
 		save_mapping("solarizer_map.json", mapping)
 	else:
 		mapping = load_mapping(args.mapping)

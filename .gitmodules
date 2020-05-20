@@ -16,3 +16,6 @@
 [submodule "Discord/EnhancedDiscord"]
 	path = Discord/EnhancedDiscord
 	url = https://github.com/joe27g/EnhancedDiscord.git
+[submodule "Yin-Yang"]
+	path = Yin-Yang
+	url = https://github.com/daehruoydeef/Yin-Yang
