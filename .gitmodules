@@ -19,3 +19,6 @@
 [submodule "Yin-Yang"]
 	path = Yin-Yang
 	url = https://github.com/daehruoydeef/Yin-Yang
+[submodule "ThemeScheduler/Yin-Yang"]
+	path = ThemeScheduler/Yin-Yang
+	url = https://github.com/luckadletz/Yin-Yang.git
