@@ -3311,47 +3311,47 @@
     <path
        id="progress-pattern-disabled-left"
        d="m 275,170 h -5 v 5 h 5 z"
-       style="text-transform:none;fill:#586e75;fill-rule:evenodd"
+       style="text-transform:none;fill:#657b83;fill-rule:evenodd"
        inkscape:connector-curvature="0" />
     <path
        id="progress-pattern-disabled-bottomleft"
        d="m 275,175 h -5 v 5 h 5 z"
-       style="text-transform:none;fill:#586e75;fill-rule:evenodd"
+       style="text-transform:none;fill:#657b83;fill-rule:evenodd"
        inkscape:connector-curvature="0" />
     <path
        id="progress-pattern-disabled-bottom"
        d="m 280,175 h -5 v 5 h 5 z"
-       style="text-transform:none;fill:#586e75;fill-rule:evenodd"
+       style="text-transform:none;fill:#657b83;fill-rule:evenodd"
        inkscape:connector-curvature="0" />
     <path
        id="progress-pattern-disabled-bottomright"
        d="m 285,175 h -5 v 5 h 5 z"
-       style="text-transform:none;fill:#586e75;fill-rule:evenodd"
+       style="text-transform:none;fill:#657b83;fill-rule:evenodd"
        inkscape:connector-curvature="0" />
     <path
        id="progress-pattern-disabled-right"
        d="m 285,170 h -5 v 5 h 5 z"
-       style="text-transform:none;fill:#586e75;fill-rule:evenodd"
+       style="text-transform:none;fill:#657b83;fill-rule:evenodd"
        inkscape:connector-curvature="0" />
     <path
        id="progress-pattern-disabled-topright"
        d="m 285,165 h -5 v 5 h 5 z"
-       style="text-transform:none;fill:#586e75;fill-rule:evenodd"
+       style="text-transform:none;fill:#657b83;fill-rule:evenodd"
        inkscape:connector-curvature="0" />
     <path
        id="progress-pattern-disabled-top"
        d="m 280,165 h -5 v 5 h 5 z"
-       style="text-transform:none;fill:#586e75;fill-rule:evenodd"
+       style="text-transform:none;fill:#657b83;fill-rule:evenodd"
        inkscape:connector-curvature="0" />
     <path
        id="progress-pattern-disabled-topleft"
        d="m 275,165 h -5 v 5 h 5 z"
-       style="text-transform:none;fill:#586e75;fill-rule:evenodd"
+       style="text-transform:none;fill:#657b83;fill-rule:evenodd"
        inkscape:connector-curvature="0" />
     <path
        id="progress-pattern-disabled"
        d="m 280,170 h -5 v 5 h 5 z"
-       style="fill:#586e75;fill-opacity:1;fill-rule:evenodd"
+       style="fill:#657b83;fill-opacity:1;fill-rule:evenodd"
        inkscape:connector-curvature="0" />
     <path
        id="expand-progress-pattern-normal"
@@ -3394,7 +3394,7 @@
        y="165"
        width="8"
        height="12"
-       style="fill:#839496" />
+       style="fill:#657b83" />
   </g>
   <g
      transform="translate(0.00264425,45.000002)"

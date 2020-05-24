@@ -1,5 +1,5 @@
 [%General]
-author=Luc Kadletz, Eliver Lara
+author=Luc Kadletz
 comment=A dark and modern theme for Kvantum, based on the solarized color scheme. 
 x11drag=menubar_and_primary_toolbar
 alt_mnemonic=true
@@ -11,6 +11,7 @@ toolbar_item_spacing=1
 toolbar_interior_spacing=3
 spread_progressbar=true
 composite=true
+translucent_windows=true
 menu_shadow_depth=5
 menu_separator_height=6
 tooltip_shadow_depth=6
@@ -73,23 +74,23 @@ saturation=0.80
 shadowless_popup=false
 
 [GeneralColors]
-window.color=#073642
+window.color=#073642CC
 base.color=#002b36
-alt.base.color=#07364278
-button.color=#002b36
-light.color=#073642
-mid.light.color=#073642
-dark.color=#073642
+alt.base.color=#07364280
+button.color=#586e75
+light.color=#839496
+mid.light.color=#657b83
+dark.color=#002b36
 mid.color=#073642
-highlight.color=#d33682
-inactive.highlight.color=#6c71c4
-text.color=#657b83
-window.text.color=#657b83
-button.text.color=#657b83
-disabled.text.color=#93a1a1
-tooltip.text.color=#657b83
-highlight.text.color=#002b36
-link.color=#268bd2
+highlight.color=#d33682CC
+inactive.highlight.color=#6c71c4CC
+text.color=#839496
+window.text.color=#839496
+button.text.color=#839496
+disabled.text.color=#586e75
+tooltip.text.color=#839496
+highlight.text.color=#fdf6e3
+link.color=#2aa198
 link.visited.color=#6c71c4
 progress.indicator.text.color=#657b83
 
@@ -126,9 +127,9 @@ frame.right=3
 interior=true
 interior.element=button
 indicator.size=8
-text.normal.color=#657b83
-text.focus.color=#eee8d5
-text.press.color=#eee8d5
+text.normal.color=#839496
+text.focus.color=#93a1a1
+text.press.color=#93a1a1
 text.toggle.color=#657b83
 text.shadow=0
 text.margin=1
@@ -153,14 +154,14 @@ frame.top=1
 frame.bottom=1
 frame.left=1
 frame.right=1
-text.normal.color=#657b83
+text.normal.color=#839496
 
 [DockTitle]
 inherits=PanelButtonCommand
 frame=false
 interior=false
-text.normal.color=#657b83
-text.focus.color=#eee8d5
+text.normal.color=#839496
+text.focus.color=#93a1a1
 text.bold=false
 
 [IndicatorSpinBox]
@@ -170,20 +171,20 @@ interior=true
 frame.left=1
 indicator.element=spin
 indicator.size=10
-text.normal.color=#657b83
+text.normal.color=#839496
 
 [RadioButton]
 inherits=PanelButtonCommand
 frame=false
 interior.element=radio
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 
 [CheckBox]
 inherits=PanelButtonCommand
 frame=false
 interior.element=checkbox
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 
 [Focus]
@@ -224,7 +225,7 @@ indicator.size=8
 
 [ToolboxTab]
 inherits=PanelButtonCommand
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 text.press.color=#eee8d5
 
@@ -241,8 +242,8 @@ frame.top=4
 frame.bottom=4
 frame.left=4
 frame.right=4
-text.normal.color=#657b83
-text.focus.color=#073642
+text.normal.color=#839496
+text.focus.color=#fdf6e3
 text.toggle.color=#657b83
 frame.expansion=0
 
@@ -269,7 +270,7 @@ frame.bottom=1
 frame.left=1
 frame.right=1
 text.bold=false
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 text.press.color=#eee8d5
 text.toggle.color=#eee8d5
@@ -286,7 +287,7 @@ text.margin=0
 frame=true
 interior.element=_menubar
 frame.element=_menubar
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 frame.left=0
 frame.right=0
@@ -313,7 +314,7 @@ inherits=PanelButtonCommand
 frame.element=progress
 interior.element=progress
 text.margin=0
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 text.press.color=#eee8d5
 text.toggle.color=#657b83
@@ -339,7 +340,7 @@ text.margin.top=2
 text.margin.bottom=2
 text.margin.left=4
 text.margin.right=4
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 text.press.color=#eee8d5
 text.toggle.color=#eee8d5
@@ -375,7 +376,7 @@ frame=true
 frame.element=menuitem
 interior.element=menuitem
 indicator.element=menuitem
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 text.margin.top=1
 text.margin.bottom=1
@@ -394,7 +395,7 @@ frame.expansion=0
 inherits=PanelButtonCommand
 frame.element=_menubar
 interior.element=_menubar
-text.normal.color=#657b83
+text.normal.color=#839496
 frame.bottom=0
 frame.expansion=0
 
@@ -411,7 +412,7 @@ text.margin.left=4
 text.margin.right=4
 text.margin.top=0
 text.margin.bottom=0
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 frame.expansion=0
 
@@ -425,7 +426,7 @@ text.margin.right=2
 interior.element=titlebar
 indicator.size=16
 indicator.element=mdi
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 text.bold=true
 text.italic=false
@@ -446,7 +447,7 @@ frame.left=1
 frame.right=1
 frame.element=menu
 interior.element=menu
-text.normal.color=#657b83
+text.normal.color=#839496
 text.shadow=false
 frame.expansion=0
 
@@ -455,7 +456,7 @@ inherits=GenericFrame
 frame=false
 text.shadow=0
 text.margin=0
-text.normal.color=#657b83
+text.normal.color=#839496
 text.focus.color=#eee8d5
 text.bold=true
 frame.expansion=0

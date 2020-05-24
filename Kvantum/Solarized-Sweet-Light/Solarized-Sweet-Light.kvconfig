@@ -1,5 +1,5 @@
 [%General]
-author=Luc Kadletz, Eliver Lara
+author=Luc Kadletz
 comment=A dark and modern theme for Kvantum, based on the solarized color scheme. 
 x11drag=menubar_and_primary_toolbar
 alt_mnemonic=true
@@ -11,6 +11,7 @@ toolbar_item_spacing=1
 toolbar_interior_spacing=3
 spread_progressbar=true
 composite=true
+translucent_windows=true
 menu_shadow_depth=5
 menu_separator_height=6
 tooltip_shadow_depth=6
@@ -73,23 +74,23 @@ saturation=0.80
 shadowless_popup=false
 
 [GeneralColors]
-window.color=#eee8d5
+window.color=#eee8d5CC
 base.color=#fdf6e3
-alt.base.color=#eee8d578
-button.color=#fdf6e3
-light.color=#eee8d5
-mid.light.color=#eee8d5
-dark.color=#eee8d5
+alt.base.color=#eee8d580
+button.color=#839496
+light.color=#657b83
+mid.light.color=#657b83
+dark.color=#fdf6e3
 mid.color=#eee8d5
-highlight.color=#d33682
-inactive.highlight.color=#6c71c4
+highlight.color=#d33682CC
+inactive.highlight.color=#6c71c4CC
 text.color=#657b83
 window.text.color=#657b83
 button.text.color=#657b83
-disabled.text.color=#93a1a1
+disabled.text.color=#839496
 tooltip.text.color=#657b83
-highlight.text.color=#fdf6e3
-link.color=#268bd2
+highlight.text.color=#002b36
+link.color=#2aa198
 link.visited.color=#6c71c4
 progress.indicator.text.color=#657b83
 
@@ -127,8 +128,8 @@ interior=true
 interior.element=button
 indicator.size=8
 text.normal.color=#657b83
-text.focus.color=#073642
-text.press.color=#073642
+text.focus.color=#586e75
+text.press.color=#586e75
 text.toggle.color=#657b83
 text.shadow=0
 text.margin=1
@@ -160,7 +161,7 @@ inherits=PanelButtonCommand
 frame=false
 interior=false
 text.normal.color=#657b83
-text.focus.color=#073642
+text.focus.color=#93a1a1
 text.bold=false
 
 [IndicatorSpinBox]
@@ -242,7 +243,7 @@ frame.bottom=4
 frame.left=4
 frame.right=4
 text.normal.color=#657b83
-text.focus.color=#eee8d5
+text.focus.color=#002b36
 text.toggle.color=#657b83
 frame.expansion=0
 
