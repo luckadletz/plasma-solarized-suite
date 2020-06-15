@@ -10,9 +10,9 @@ OPTIONS = -n $@ \
 --background-color $(BG_COLOR)
 # --internal-urls ".*?" \
 
-APPS = my-noise pomodoro google-calendar trello google-mail proton-mail \
-netflix plex wikipedia wolfram youtube shop-amazon brainaural google-drive \
-microsoft-office khan-academy mit-open-courseware
+APPS = my-noise pomodoro google-calendar trello todoist google-mail proton-mail \
+netflix plex youtube shop-amazon intuit-mint brainaural google-drive \
+microsoft-office khan-academy mit-open-courseware wikipedia wolfram
 
 all : $(APPS)
 
@@ -40,6 +40,9 @@ google-calendar :
 
 trello :
 	nativefier $(OPTIONS) https://trello.com/luckadletz/boards $(BUILD_DIR)
+
+todoist : 
+	nativefier $(OPTIONS) https://todoist.com/app/#start $(BUILD_DIR)
 
 google-mail : 
 	nativefier $(OPTIONS) --counter \
