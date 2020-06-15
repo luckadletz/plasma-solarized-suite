@@ -42,7 +42,8 @@ trello :
 	nativefier $(OPTIONS) https://trello.com/luckadletz/boards $(BUILD_DIR)
 
 todoist : 
-	nativefier $(OPTIONS) https://todoist.com/app/#start $(BUILD_DIR)
+	nativefier $(OPTIONS) --internal-urls ".*?(google|todoist).*?" \
+	https://todoist.com/app/#start $(BUILD_DIR)
 
 google-mail : 
 	nativefier $(OPTIONS) --counter \
