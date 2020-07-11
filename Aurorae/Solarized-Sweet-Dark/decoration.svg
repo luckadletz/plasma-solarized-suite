@@ -13,7 +13,7 @@
    height="84"
    version="1"
    sodipodi:docname="decoration.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
   <metadata
      id="metadata58">
     <rdf:RDF>
@@ -38,13 +38,14 @@
      inkscape:window-height="1037"
      id="namedview56"
      showgrid="true"
-     inkscape:zoom="44.930266"
-     inkscape:cx="10.900614"
-     inkscape:cy="43.091758"
+     inkscape:zoom="8"
+     inkscape:cx="25.106057"
+     inkscape:cy="3.71025"
      inkscape:window-x="0"
      inkscape:window-y="22"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3642">
+     inkscape:current-layer="svg3642"
+     inkscape:document-rotation="0">
     <inkscape:grid
        type="xygrid"
        id="grid3336" />
@@ -52,68 +53,79 @@
   <defs
      id="defs3644">
     <linearGradient
+       id="linearGradient904">
+      <stop
+         id="stop900"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:0.97047907" />
+      <stop
+         id="stop902"
+         offset="1"
+         style="stop-color:#000000;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient3334">
       <stop
-         style="stop-color:#002b36;stop-opacity:0.78431374"
+         style="stop-color:#000000;stop-opacity:0.97596759"
          offset="0"
          id="stop3330" />
       <stop
-         style="stop-color:#002b36;stop-opacity:0"
+         style="stop-color:#000000;stop-opacity:0"
          offset="1"
          id="stop3332" />
     </linearGradient>
     <linearGradient
        id="linearGradient3328">
       <stop
-         style="stop-color:#002b36;stop-opacity:0.78431374"
+         style="stop-color:#000000;stop-opacity:0.96750146"
          offset="0"
          id="stop3324" />
       <stop
-         style="stop-color:#002b36;stop-opacity:0"
+         style="stop-color:#000000;stop-opacity:0"
          offset="1"
          id="stop3326" />
     </linearGradient>
     <linearGradient
        id="linearGradient3322">
       <stop
-         style="stop-color:#002b36;stop-opacity:0.78431374"
+         style="stop-color:#000000;stop-opacity:1"
          offset="0"
          id="stop3318" />
       <stop
-         style="stop-color:#002b36;stop-opacity:0"
+         style="stop-color:#000000;stop-opacity:0"
          offset="1"
          id="stop3320" />
     </linearGradient>
     <linearGradient
        id="linearGradient3316">
       <stop
-         style="stop-color:#002b36;stop-opacity:0.78431374"
+         style="stop-color:#000000;stop-opacity:0.97728258"
          offset="0"
          id="stop3312" />
       <stop
-         style="stop-color:#002b36;stop-opacity:0"
+         style="stop-color:#000000;stop-opacity:0"
          offset="1"
          id="stop3314" />
     </linearGradient>
     <linearGradient
        id="linearGradient3310">
       <stop
-         style="stop-color:#002b36;stop-opacity:0.78431374"
+         style="stop-color:#000000;stop-opacity:1"
          offset="0"
          id="stop3306" />
       <stop
-         style="stop-color:#002b36;stop-opacity:0"
+         style="stop-color:#000e00;stop-opacity:0"
          offset="1"
          id="stop3308" />
     </linearGradient>
     <linearGradient
        id="linearGradient3304">
       <stop
-         style="stop-color:#002b36;stop-opacity:0.78431374"
+         style="stop-color:#000000;stop-opacity:1"
          offset="0"
          id="stop3300" />
       <stop
-         style="stop-color:#002b36;stop-opacity:0"
+         style="stop-color:#000000;stop-opacity:0"
          offset="1"
          id="stop3302" />
     </linearGradient>
@@ -122,11 +134,11 @@
       <stop
          id="stop4217-5"
          offset="0"
-         style="stop-color:#002b36;stop-opacity:0.78431374" />
+         style="stop-color:#000000;stop-opacity:1" />
       <stop
          id="stop4223-8"
          offset="1"
-         style="stop-color:#002b36;stop-opacity:0" />
+         style="stop-color:#000000;stop-opacity:0" />
     </linearGradient>
     <radialGradient
        id="radialGradient4275"
@@ -137,7 +149,7 @@
        fy="905.362"
        gradientTransform="matrix(1.5867299e-5,-1.9999916,1.9999819,1.5867221e-5,-1793.7234,1984.9774)"
        gradientUnits="userSpaceOnUse"
-       xlink:href="#linearGradient3304" />
+       xlink:href="#linearGradient904" />
     <linearGradient
        id="linearGradient4271"
        x1="83.6"
@@ -216,12 +228,7 @@
      id="decoration-bottomleft"
      style="display:inline">
     <path
-       id="shadow-bottomleft"
-       d="M 17,84 V 74 h -2 c -2.77,0 -5,-2.23 -5,-5 V 67 H 0 v 17 z"
-       style="opacity:1;fill:url(#radialGradient4263);fill-opacity:1;stroke:none"
-       inkscape:connector-curvature="0" />
-    <path
-       style="color:#073642;opacity:0.82999998;fill:#002b36;fill-opacity:1;stroke:none"
+       style="color:#073642;opacity:0.83;fill:#002b36;fill-opacity:1;stroke:none"
        id="path87"
        class="ColorScheme-Background"
        d="m 17.000005,74.000025 v -7 h -7 v 2 c 0,2.77 2.23,5 5,5 z"
@@ -231,9 +238,25 @@
        id="path4447"
        d="m 10,67 v 2 c 0,2.77 2.23,5 5,5 h 2 v -1 h -2 c -2.233297,0 -4,-1.766703 -4,-4 v -2 z"
        inkscape:connector-curvature="0" />
+    <path
+       id="shadow-bottomleft"
+       d="M 17,84 V 74 h -2 c -2.77,0 -5,-2.23 -5,-5 V 67 H 0 v 17 z"
+       style="opacity:1;fill:url(#radialGradient4263);fill-opacity:1;stroke:none"
+       inkscape:connector-curvature="0" />
   </g>
   <g
      id="decoration-left">
+    <path
+       style="color:#073642;opacity:0.83;fill:#002b36;fill-opacity:1;stroke:none"
+       id="path71"
+       class="ColorScheme-Background"
+       d="m 10.000015,16.999925 v 50 l 7,10e-6 v -50 z"
+       inkscape:connector-curvature="0" />
+    <path
+       style="color:#002b36;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#002b36;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.8;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#002b36;solid-opacity:1;fill:#002b36;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="path4438"
+       d="m 10,17 v 50 h 1 V 17 Z"
+       inkscape:connector-curvature="0" />
     <g
        id="shadow-left-3"
        transform="matrix(-1,0,0,1,298,-240)">
@@ -252,33 +275,14 @@
          x="278"
          y="257"
          transform="translate(3,2)"
-         style="fill:#268bd2;fill-opacity:0" />
+         style="fill:#dc322f;fill-opacity:0" />
     </g>
-    <path
-       style="color:#073642;opacity:0.82999998;fill:#002b36;fill-opacity:1;stroke:none"
-       id="path71"
-       class="ColorScheme-Background"
-       d="m 10.000015,16.999925 v 50 l 7,10e-6 v -50 z"
-       inkscape:connector-curvature="0" />
-    <path
-       style="color:#002b36;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#002b36;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.8;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#002b36;solid-opacity:1;fill:#002b36;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       id="path4438"
-       d="m 10,17 v 50 h 1 V 17 Z"
-       inkscape:connector-curvature="0" />
   </g>
   <g
      id="decoration-right">
     <g
        id="shadow-right"
        transform="translate(-214,-240)">
-      <rect
-         id="rect45"
-         width="50"
-         height="10"
-         x="-307"
-         y="288"
-         transform="rotate(-90)"
-         style="opacity:1;fill:url(#linearGradient4452);fill-opacity:1;stroke:none" />
       <rect
          id="rect47"
          width="7"
@@ -287,9 +291,17 @@
          y="257"
          transform="translate(3,2)"
          style="fill:#268bd2;fill-opacity:0" />
+      <rect
+         id="rect45"
+         width="50"
+         height="10"
+         x="-307"
+         y="288"
+         transform="rotate(-90)"
+         style="opacity:1;fill:url(#linearGradient4452);fill-opacity:1;stroke:none" />
     </g>
     <path
-       style="color:#073642;opacity:0.82999998;fill:#002b36;fill-opacity:1;stroke:none"
+       style="color:#073642;opacity:0.83;fill:#002b36;fill-opacity:1;stroke:none"
        id="path79"
        class="ColorScheme-Background"
        d="m 73.999995,16.999935 v 50 l -7,1e-5 v -50 z"
@@ -306,14 +318,6 @@
        id="shadow-bottom"
        transform="rotate(90,269,55)">
       <rect
-         id="rect39"
-         width="50"
-         height="10"
-         x="-307"
-         y="288"
-         transform="rotate(-90)"
-         style="opacity:1;fill:url(#linearGradient4259);fill-opacity:1;stroke:none" />
-      <rect
          id="rect41"
          width="7"
          height="1"
@@ -321,9 +325,17 @@
          y="257"
          transform="translate(3,2)"
          style="fill:#268bd2;fill-opacity:0" />
+      <rect
+         id="rect39"
+         width="50"
+         height="10"
+         x="-307"
+         y="288"
+         transform="rotate(-90)"
+         style="opacity:1;fill:url(#linearGradient4259);fill-opacity:1;stroke:none" />
     </g>
     <path
-       style="color:#073642;opacity:0.82999998;fill:#002b36;fill-opacity:1;stroke:none"
+       style="color:#073642;opacity:0.83;fill:#002b36;fill-opacity:1;stroke:none"
        id="path95"
        class="ColorScheme-Background"
        d="m 16.999975,74.000065 h 50.00002 v -7 h -50.00001 z"
@@ -342,7 +354,7 @@
        style="opacity:1;fill:url(#radialGradient3382);fill-opacity:1;stroke:none"
        inkscape:connector-curvature="0" />
     <path
-       style="color:#073642;opacity:0.82999998;fill:#002b36;fill-opacity:1;stroke:none"
+       style="color:#073642;opacity:0.83;fill:#002b36;fill-opacity:1;stroke:none"
        id="path103"
        class="ColorScheme-Background"
        d="m 66.999995,74.000025 v -7 h 7 v 2 c 0,2.77 -2.23,5 -5,5 z"
@@ -376,7 +388,7 @@
          style="fill:#268bd2;fill-opacity:0" />
     </g>
     <path
-       style="color:#073642;opacity:0.82999998;fill:#002b36;fill-opacity:1;stroke:none"
+       style="color:#073642;opacity:0.83;fill:#002b36;fill-opacity:1;stroke:none"
        id="path111"
        class="ColorScheme-Background"
        d="m 16.999975,9.999935 h 50.00002 v 7 h -50.00001 z"
@@ -395,7 +407,7 @@
        style="opacity:1;fill:url(#radialGradient4255);fill-opacity:1;stroke:none"
        inkscape:connector-curvature="0" />
     <path
-       style="color:#073642;opacity:0.82999998;fill:#002b36;fill-opacity:1;stroke:none"
+       style="color:#073642;opacity:0.83;fill:#002b36;fill-opacity:1;stroke:none"
        id="path119"
        class="ColorScheme-Background"
        d="m 66.999995,9.999935 v 7 h 7 v -2 c 0,-2.77 -2.23,-5 -5,-5 z"
@@ -414,7 +426,7 @@
        style="opacity:1;fill:url(#radialGradient4275);fill-opacity:1;stroke:none"
        inkscape:connector-curvature="0" />
     <path
-       style="color:#073642;opacity:0.82999998;fill:#002b36;fill-opacity:1;stroke:none"
+       style="color:#073642;opacity:0.83;fill:#002b36;fill-opacity:1;stroke:none"
        id="path63"
        class="ColorScheme-Background"
        d="m 17.000005,9.999935 v 7 h -7 v -2 c 0,-2.77 2.23,-5 5,-5 z"
