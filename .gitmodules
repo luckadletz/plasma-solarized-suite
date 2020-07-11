@@ -8,7 +8,7 @@
 	path = Console/pureline
 	url = https://github.com/chris-marsh/pureline.git
 [submodule "Spotify"]
-	path = Spotify
+	path = Spotify/spicetify-cli
 	url = https://github.com/khanhas/spicetify-cli.git
 [submodule "Discord/Glasscord"]
 	path = Discord/Glasscord
