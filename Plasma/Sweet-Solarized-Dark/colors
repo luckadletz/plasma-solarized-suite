@@ -1,11 +1,11 @@
 [Colors:Button]
-BackgroundNormal=255,255,255
+BackgroundNormal=253,246,227
 DecorationFocus=#d33682
 DecorationHover=#2aa198
 ForegroundNormal=#eee8d5
 
 [Colors:Complementary]
-BackgroundNormal=211,54,130
+BackgroundNormal=147,161,161
 DecorationFocus=#d33682
 DecorationHover=#2aa198
 ForegroundNormal=#eee8d5
