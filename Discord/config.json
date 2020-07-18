@@ -1,0 +1,26 @@
+{
+    "css_loader": {
+        "path": "./Themes/glasscord_solarized.theme.css"
+    },
+    "css_settings": {
+        "enabled": true
+    },
+    "direct_download": {
+        "enabled": true
+    },
+    "double_click_edit": {
+        "enabled": true
+    },
+    "double_click_mention": {
+        "enabled": true
+    },
+    "ed_settings": {
+        "enabled": true
+    },
+    "quick_save": {
+        "enabled": true
+    },
+    "silence": {
+        "enabled": true
+    }
+}
