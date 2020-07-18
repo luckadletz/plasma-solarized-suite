@@ -1,22 +1,31 @@
 # System theme meta-installer
 # Luc Kadletz 2020
 
+
 all: \
-window-decorations \
 cursor \
 discord \
 font \
 gtk \
 icons \
-kvantum \
 spotify \
-theme-scheduler \
-webapps
+kvantum \
+window-decorations \
+# theme-scheduler \
+# webapps
+	# S U C C E S S 
 
-window-decorations : ./Aurorae
-	# To apply window decorations just drop em in your home folder
-	cp -rf Aurorae/Solarized-Sweet-Dark ~/.local/share/aurorae/themes/Solarized-Sweet-Dark
-	cp -rf Aurorae/Solarized-Sweet-Light ~/.local/share/aurorae/themes/Solarized-Sweet-Light
+dependencies : \
+spicetify \
+discord-extensions
+	sudo apt install python3 python3-pip npm
+	sudo npm install -g --engine-strict asar
+
+
+clean :
+	# Once everything is set up, you don't need any of these
+	apt remove python3-pip nativefier npm
+
 
 cursor : ./Cursor
 	# For cursors, you can put them in your home folder
@@ -25,37 +34,103 @@ cursor : ./Cursor
 	# But, cursors need to be system wide to work everywhere (???)
 	sudo cp -rf Cursor/Vimix-cursors /usr/share/icons
 	sudo cp -rf Cursor/Vimix-white-cursors /usr/share/icons
+	# Also, you have to set the gtk cursor to match...
+	# Still not getting picked up on desktop, until it was???
 
-discord : ./Discord
-	# TODO
+
+discord : ./Discord/Themes
+	# Applying discord themes (assuming you have EnhancedDiscord & glasscord)
+	cp -rf ./Discord/Themes /opt/EnhancedDiscord/
+	# TODO go ahead and apply the theme with ctrl+r
+
+discord-extensions : ./Discord/EnhancedDiscord ./Discord/glasscord.asar
+	# I'm assuming you installed discord the same way I did :)
+	
+	# First we install Enhanced discord for custom theme support
+	cp -r ./Discord/EnhancedDiscord /opt
+	# In ~/.config/discord/ find /x.x.xxx/modules/discord_desktop_core/index.js
+	# TODO Insert this at the top of the file:
+	# process.env.injDir = '/opt/EnhancedDiscord'; 
+	# require(`${process.env.injDir}/injection.js`);
+
+	# Now we install the glasscord estension for composition effects
+	sudo mkdir -p /usr/share/discord/resources/app
+	# Extract package.json file
+	cd /usr/share/discord/resources && \
+	sudo asar ef app.asar package.json && \
+	sudo mv package.json ./app/package.json
+	# Copy glasscord.asar to discord and inject into package.json
+	sudo cp -f ./Discord/glasscord.asar /usr/share/discord/resources/app/
+	# TODO replace   "main": "...", with "main": "./glasscord.asar"
+
 
 font : ./Font
 	# Dump _all_ the fonts into the system directory
-	sudo cp -rf Font/fira-code/distr/ttf/*.ttf /usr/share/fonts/
-	sudo cp -rf Font/encode-sans/*.ttf /usr/share/fonts/
+	sudo mkdir -p /usr/share/fonts/truetype/fira-code /usr/share/fonts/truetype/encode-sans
+	sudo cp -rf Font/fira-code/distr/ttf/*.ttf /usr/share/fonts/truetype/fira-code
+	sudo cp -rf Font/encode-sans/*.ttf /usr/share/fonts/truetype/encode-sans
+	# Rebuild the font cache
+	fc-cache
 
-gtk : ./Gtk
-	# TODO
 
 icons : ./Icons
-	# Only copy the directories in Icons to ~/.
+	# Copy the directories in Icons to user icons, this may take a while...
 	cp --remove-destination -rt ~/.local/share/icons `find Icons -type d`
 
+
+gtk : ./Gtk
+	# TODO GTK theme :)
+
+
 kvantum : ./Kvantum
-	# TODO
+	cp -rf Kvantum/Solarized-Sweet-Dark ~/.config/Kvantum/
+	cp -rf Kvantum/Solarized-Sweet-Light ~/.config/Kvantum/
+
+
+plasma : ./Plasma
+	# ~/.local/share/plasma/desktoptheme
+	cp -rf Plasma/Sweet-Solarized-Dark ~/.local/share/plasma/desktoptheme
+	cp -rf Plasma/Sweet-Solarized-Light ~/.local/share/plasma/desktoptheme
+
+
+sound : ./Sound
+	# Copying sounds to /usr/share/sound
+	# You can put whatever .ogg here
+	sudo cp --remove-destination -rft /usr/share/sounds `find ./Sound/ -type d`
+	# Change sounds in System Settings -> Personalization -> Notifications -> Plasma Workspace
+
+
+spicetify :
+	# I'm assuming you installed spotify the same way I did :)
+	# Install spicetify to change themes
+	sudo mkdir /opt/spicetify-cli
+	sudo chown ${USER}:${USER} /opt/spicetify-cli
+	export SPICETIFY_INSTALL=/opt/spicetify-cli && \
+	./Spotify/spicetify-cli/install.sh
+	# add link to path
+	sudo ln -s /opt/spicetify-cli/spicetify /usr/bin/spicetify
+	# Get permission to modify spotify files
+	sudo chown ${USER}:${USER} -R
+	sudo chmod a+wr -R /usr/share/spotify -R
+
 
 spotify : ./Spotify
-	# TODO
+	# copy over theme files and set
+	cp -r ./Spotify/SolarizedDark ~/.config/spicetify/Themes
+	spicetify config current_theme SolarizedDark
+	spicetify apply
 
-theme-scheduler : dependencies
+
+theme-scheduler :
 	cd ThemeScheduler/Yin-Yang && sudo ./install.sh
-	# It always says that, you have to check it yourself@echo...'
+	# It always says that, you have to check it yourself...
+
 
 webapps : 
 	$(MAKE) -C WebApps
 
-dependencies :
-	sudo apt install python3 python3-pip
 
-remove-build-dependencies :
-	apt remove python3-pip
+window-decorations : ./Aurorae
+	# To apply window decorations just drop em in your home folder
+	cp -rf Aurorae/Solarized-Sweet-Dark ~/.local/share/aurorae/themes/Solarized-Sweet-Dark
+	cp -rf Aurorae/Solarized-Sweet-Light ~/.local/share/aurorae/themes/Solarized-Sweet-Light

@@ -1,18 +1,19 @@
 # Custom Nativefier web apps for Luc Kadletz
 
-BG_COLOR = 07364233
-
 BUILD_DIR = ./build
 PUB_DIR = /opt
 
 OPTIONS = -n $@ \
---browserwindow-options '{"webPreferences":{"sandbox":false}}' \
---background-color $(BG_COLOR)
+--browserwindow-options '{"webPreferences":{"sandbox":false}}'
 # --internal-urls ".*?" \
 
 APPS = my-noise pomodoro google-calendar trello todoist google-mail proton-mail \
-netflix plex youtube shop-amazon intuit-mint brainaural google-drive \
-microsoft-office khan-academy mit-open-courseware wikipedia wolfram
+plex youtube shop-amazon intuit-mint brainaural google-drive \
+khan-academy wikipedia wolfram
+
+BETA_APPS = netflix microsoft-office
+
+MEH_APPS = mit-open-courseware 
 
 all : $(APPS)
 
