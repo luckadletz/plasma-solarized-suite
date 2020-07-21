@@ -36,7 +36,6 @@ cursor : ./Cursor
 	# Also, you have to set the gtk cursor to match...
 	# Still not getting picked up on desktop, until it was???
 
-
 discord : ./Discord/Themes
 	# Applying discord themes (assuming you have EnhancedDiscord & glasscord)
 	sudo cp -rf ./Discord/Themes /opt/EnhancedDiscord/
@@ -72,13 +71,33 @@ font : ./Font
 	fc-cache
 
 
-icons : ./Icons
-	# Copy the directories in Icons to user icons, this may take a while...
-	cp --remove-destination -rt ~/.local/share/icons `find Icons -type d`
+fortune : ./Fortune/fortunes/*
+	for FORTUNE in $^ ; do \
+		./Fortune/install_fortune.sh $${FORTUNE} ; \
+	done
 
 
 gtk : ./Gtk
 	# TODO GTK theme :)
+
+
+grub : font
+	# Mater - a utility to generate a minimal GRUB interface
+	# We need to keep it around to regenerate on new kernels
+	cd /opt && sudo git clone https://github.com/mateosss/matter.git && sudo chown mater $(USER):$(USER) 
+	
+	# WARNING: I'm assuming you have the same boot config as me
+	sudo /opt/matter/matter.py \
+	-i debian microsoft-windows cog debian debian debian debian cog \
+	-ff /usr/share/fonts/fira-code/FiraCode-Bold.ttf -fn "Fira Code Bold" -fs 32 \
+	-fg 839496 -bg 073642 -ic 93a1a1 -hl 2aa198
+
+	# You can completely remove Matter from your system with ./matter.py -u
+
+
+icons : ./Icons
+	# Copy the directories in Icons to user icons, this may take a while...
+	cp --remove-destination -rt ~/.local/share/icons `find Icons -type d`
 
 
 kvantum : ./Kvantum
