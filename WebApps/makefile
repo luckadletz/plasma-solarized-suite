@@ -4,16 +4,20 @@ BUILD_DIR = ./build
 PUB_DIR = /opt
 
 OPTIONS = -n $@ \
---browserwindow-options '{"webPreferences":{"sandbox":false}}'
+--browserwindow-options '{"webPreferences":{"sandbox":false}}'\
+--disable-dev-tools \
+--single-instance \
+# --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/999 Safari/537.36"
 # --internal-urls ".*?" \
 
-APPS = my-noise pomodoro google-calendar trello todoist google-mail proton-mail \
-plex youtube shop-amazon intuit-mint brainaural google-drive \
+APPS = my-noise pomodoro google-calendar \
+trello todoist google-mail proton-mail \
+plex youtube amazon brainaural \
 khan-academy wikipedia wolfram
 
-BETA_APPS = netflix microsoft-office
+BETA_APPS = netflix microsoft-office google-drive
 
-MEH_APPS = mit-open-courseware 
+MEH_APPS = mit-open-courseware intuit-mint 
 
 all : $(APPS)
 
@@ -22,8 +26,15 @@ install :
 
 uninstall :
 	$(foreach app, $(APPS), sudo rm -i  /usr/bin/$(app);)
-	#Does not yet clean up the published folders in /opt/
+	# TODO actually clean up the published folders in /opt/
+
+dev-ez :
+	sudo apt install npm
+	sudo npm install -g nativefier
 	
+dev-hard : 
+	# TODO Compile & install my custom fork of nativefier
+
 clean : 
 	rm -r $(BUILD_DIR)
 
@@ -74,7 +85,7 @@ wolfram :
 youtube : 
 	nativefier $(OPTIONS) https://www.youtube.com/ $(BUILD_DIR)
 
-shop-amazon :
+amazon :
 	nativefier $(OPTIONS) https://smile.amazon.com/ $(BUILD_DIR)
 
 brainaural :
