@@ -21,6 +21,8 @@ dependencies :
 	make discord-extensions
 	make spicetify
 
+	sudo chmod +x ./Fortune/install_fortune.sh
+
 clean :
 	# Once everything is set up, you don't need any of these
 	apt remove python3-pip nativefier npm
@@ -84,12 +86,14 @@ gtk : ./Gtk
 grub : font
 	# Mater - a utility to generate a minimal GRUB interface
 	# We need to keep it around to regenerate on new kernels
-	cd /opt && sudo git clone https://github.com/mateosss/matter.git && sudo chown mater $(USER):$(USER) 
+	cd /opt && \
+	sudo git clone https://github.com/mateosss/matter.git && \
+	sudo chown $(USER):$(USER) mater  
 	
 	# WARNING: I'm assuming you have the same boot config as me
 	sudo /opt/matter/matter.py \
-	-i debian microsoft-windows cog debian debian debian debian cog \
-	-ff /usr/share/fonts/fira-code/FiraCode-Bold.ttf -fn "Fira Code Bold" -fs 32 \
+	-i debian folder debian debian debian debian microsoft-windows cog \
+	-ff /usr/share/fonts/truetype/fira-code/FiraCode-Bold.ttf -fn "Fira Code Bold" -fs 32 \
 	-fg 839496 -bg 073642 -ic 93a1a1 -hl 2aa198
 
 	# You can completely remove Matter from your system with ./matter.py -u
