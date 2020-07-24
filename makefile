@@ -152,8 +152,10 @@ theme-scheduler :
 
 
 webapps : 
+	$(MAKE) -C WebApps dev
 	$(MAKE) -C WebApps all
 	$(MAKE) -C WebApps install
+
 
 window-decorations : ./Aurorae
 	# To apply window decorations just drop em in your home folder

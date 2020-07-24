@@ -10,7 +10,7 @@ OPTIONS = -n $@ \
 # --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/999 Safari/537.36"
 # --internal-urls ".*?" \
 
-APPS = my-noise pomodoro google-calendar \
+APPS = my-noise pomodoro google-calendar roll-20 \
 trello todoist google-mail proton-mail \
 plex youtube amazon brainaural \
 khan-academy wikipedia wolfram
@@ -28,12 +28,10 @@ uninstall :
 	$(foreach app, $(APPS), sudo rm -i  /usr/bin/$(app);)
 	# TODO actually clean up the published folders in /opt/
 
-dev-ez :
+dev :
 	sudo apt install npm
 	sudo npm install -g nativefier
-	
-dev-hard : 
-	# TODO Compile & install my custom fork of nativefier
+	sudo chmod +x ./install_webapp.sh
 
 clean : 
 	rm -r $(BUILD_DIR)
@@ -66,12 +64,15 @@ proton-mail :
 	https://mail.protonmail.com/inbox $(BUILD_DIR)
 
 netflix :
-	nativefier $(OPTIONS) --single-instance \
-	https://www.netflix.com/browse $(BUILD_DIR)
+	nativefier $(OPTIONS) https://www.netflix.com/browse $(BUILD_DIR)
 
 plex : 
-	nativefier $(OPTIONS) --single-instance \
-	https://app.plex.tv/desktop $(BUILD_DIR)
+	nativefier $(OPTIONS) https://app.plex.tv/desktop $(BUILD_DIR)
+
+
+roll-20 :
+	nativefier $(OPTIONS) https://app.roll20.net $(BUILD_DIR)
+
 
 wikipedia :
 	nativefier $(OPTIONS) https://en.wikipedia.org/wiki/Main_Page $(BUILD_DIR)
