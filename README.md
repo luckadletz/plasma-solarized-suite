@@ -12,6 +12,9 @@ Please let me know at luckadletz+pss@gmail.com if you find any errors.
 
 Gonna do dark first, but day/night cycling of light/dark would be rad.
 
+# Cows
+Favorite subset taken from https://github.com/paulkaefer/cowsay-files
+
 ## Icons: iconpack-obsidian
 Gnome Icon Pack based upon Faenza
 

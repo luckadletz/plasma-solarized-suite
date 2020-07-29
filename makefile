@@ -1,6 +1,6 @@
 # System theme meta-installer
 # Luc Kadletz 2020
-
+# TODO split up the theme stuff and the software stuff...
 
 all: \
 cursor \
@@ -45,7 +45,7 @@ discord : ./Discord/Themes
 
 discord-extensions : ./Discord/EnhancedDiscord ./Discord/glasscord.asar
 	# I'm assuming you installed discord the same way I did :)
-	
+	# (with a .deb)
 	# First we install Enhanced discord for custom theme support
 	sudo cp -r ./Discord/EnhancedDiscord /opt
 	# In ~/.config/discord/ find /x.x.xxx/modules/discord_desktop_core/index.js
@@ -72,6 +72,9 @@ font : ./Font
 	# Rebuild the font cache
 	fc-cache
 
+
+cows : ./Cows
+	sudo cp -rf $^/*.cow /usr/share/cowsay/cows
 
 fortune : ./Fortune/fortunes/*
 	for FORTUNE in $^ ; do \
@@ -144,6 +147,23 @@ spotify : ./Spotify
 	cp -r ./Spotify/SolarizedDark ~/.config/spicetify/Themes
 	spicetify config current_theme SolarizedDark
 	spicetify apply
+
+
+spotify-cli : 
+	# This one is for calling play / pause / whatever on cli
+	pip install spotify-cli-linux
+	# This one is for looking cool and going fast B)
+	sudo mkdir /opt/spotify-tui
+	curl https://github.com/Rigellute/spotify-tui/releases/download/v0.21.0/spotify-tui-linux.tar.gz
+
+
+touchpad-gestures :
+	sudo gpasswd -a $(USER) input
+	git clone https://github.com/bulletmark/libinput-gestures.git
+	sudo make -C libinput-gestures install
+	libinput-gestures-setup autostart
+	libinput-gestures-setup start
+	#Dunno if this works yet
 
 
 theme-scheduler :
