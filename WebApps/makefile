@@ -10,14 +10,14 @@ OPTIONS = -n $@ \
 # --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/999 Safari/537.36"
 # --internal-urls ".*?" \
 
-APPS = my-noise pomodoro google-calendar \
+APPS = my-noise google-calendar \
 trello todoist google-mail proton-mail \
 plex youtube amazon brainaural \
 khan-academy wikipedia wolfram
 
 BETA_APPS = netflix microsoft-office google-drive
 
-MEH_APPS = mit-open-courseware intuit-mint 
+MEH_APPS = mit-open-courseware intuit-mint pomodoro
 
 all : $(APPS)
 
@@ -28,12 +28,9 @@ uninstall :
 	$(foreach app, $(APPS), sudo rm -i  /usr/bin/$(app);)
 	# TODO actually clean up the published folders in /opt/
 
-dev-ez :
+dev-up :
 	sudo apt install npm
-	sudo npm install -g nativefier
-	
-dev-hard : 
-	# TODO Compile & install my custom fork of nativefier
+	sudo npm install -g Nativefier
 
 clean : 
 	rm -r $(BUILD_DIR)
@@ -43,15 +40,16 @@ my-noise :
 	https://mynoise.net/noiseMachines.php $(BUILD_DIR)
 
 pomodoro : 
-	nativefier $(OPTIONS) --width 600 --height 400 --zoom 0.9 --counter --single-instance \
+	nativefier $(OPTIONS) --width 600 --height 400 --zoom 0.9 --counter \
 	https://tomato-timer.com/ $(BUILD_DIR)
 
 google-calendar :
-	nativefier $(OPTIONS) --counter --single-instance \
+	nativefier $(OPTIONS) --counter \
 	https://calendar.google.com/calendar/r $(BUILD_DIR)
 
 trello :
-	nativefier $(OPTIONS) https://trello.com/luckadletz/boards $(BUILD_DIR)
+	nativefier $(OPTIONS) --internal-urls ".*?(google|trello|atlassian).*?" \
+	https://trello.com/luckadletz/boards $(BUILD_DIR)
 
 todoist : 
 	nativefier $(OPTIONS) --internal-urls ".*?(google|todoist).*?" \
@@ -66,11 +64,11 @@ proton-mail :
 	https://mail.protonmail.com/inbox $(BUILD_DIR)
 
 netflix :
-	nativefier $(OPTIONS) --single-instance \
+	nativefier $(OPTIONS) \
 	https://www.netflix.com/browse $(BUILD_DIR)
 
 plex : 
-	nativefier $(OPTIONS) --single-instance \
+	nativefier $(OPTIONS) \
 	https://app.plex.tv/desktop $(BUILD_DIR)
 
 wikipedia :
@@ -96,7 +94,7 @@ google-drive :
 	https://drive.google.com/drive/my-drive $(BUILD_DIR)
 
 microsoft-office :
-	nativefier $(OPTIONS) --internal-urls ".*?(office|live|onedrive|onenote|).*?" \
+	nativefier $(OPTIONS) --internal-urls ".*?(office|live|onedrive|onenote).*?" \
 	https://www.office.com/?auth=1 $(BUILD_DIR)
 
 khan-academy :
