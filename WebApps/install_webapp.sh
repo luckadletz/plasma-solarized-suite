@@ -26,7 +26,7 @@ install-webapp(){
 	echo chown root $SANDBOX_PATH
 	sudo chown root $SANDBOX_PATH
 	echo chmod 4755 $SANDBOX_PATH
-	sudo chmod 4755 $SANDBOX_PATH	
+	sudo chmod 4755 $SANDBOX_PATH
 
 	DESKTOP_PATH=$APP_PUB_DIR/$APP_NAME.desktop
 	echo "Copying desktop shortcut $DESKTOP_PATH"

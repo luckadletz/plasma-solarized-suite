@@ -4,7 +4,7 @@
 
 # Get ready to rock
 sudo apt-get update
-sudo apt-get install software-properties-common apt-transport-https wget cowsay
+sudo apt-get install software-properties-common apt-transport-https wget cowsay fortune curl
 
 ## Get keys
 # Actual apt-get install commands are commented out, we add to TARGETS & do them all at once at the end
@@ -20,13 +20,13 @@ cowsay -f duck "Got spotify repo!"
 # sudo apt-get install spotify-client
 
 # Steam Games
-sudo tee /etc/apt/sources.list.d/steam.list <<'EOF'
-deb [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
-deb-src [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
-EOF
-sudo dpkg --add-architecture i386
-TARGETS="$TARGETS libgl1-mesa-dri:amd64 libgl1-mesa-dri:i386 libgl1-mesa-glx:amd64 libgl1-mesa-glx:i386 steam-launcher"
-cowsay -f duck "Got steam configured!"
+# sudo tee /etc/apt/sources.list.d/steam.list <<'EOF'
+# deb [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
+# deb-src [arch=amd64,i386] http://repo.steampowered.com/steam/ precise steam
+# EOF
+# sudo dpkg --add-architecture i386
+# TARGETS="$TARGETS libgl1-mesa-dri:amd64 libgl1-mesa-dri:i386 libgl1-mesa-glx:amd64 libgl1-mesa-glx:i386 steam-launcher"
+# cowsay -f duck "Got steam configured!"
 # sudo apt-get install libgl1-mesa-dri:amd64 libgl1-mesa-dri:i386 libgl1-mesa-glx:amd64 libgl1-mesa-glx:i386 steam-launcher
 
 # Discord Chat
@@ -55,6 +55,7 @@ TARGETS="$TARGETS qt5-style-kvantum qt5-style-kvantum-themes"
 
 # Install all packages
 cowsay -f duck "Now we can simply apt install $TARGETS"
+sudo apt update
 sudo apt install $TARGETS
 
 # TODO graphics card shit

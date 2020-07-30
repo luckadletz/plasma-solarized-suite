@@ -6,21 +6,22 @@ all: \
 cursor \
 discord \
 font \
-gtk \
 icons \
 spotify \
 kvantum \
 window-decorations \
+# gtk \
 # theme-scheduler \
 # webapps
 	# S U C C E S S 
 
-dependencies : \
-spicetify \
-discord-extensions
+dependencies :
 	sudo apt install python3 python3-pip npm
 	sudo npm install -g --engine-strict asar
+	make discord-extensions
+	make spicetify
 
+	sudo chmod +x ./Fortune/install_fortune.sh
 
 clean :
 	# Once everything is set up, you don't need any of these
@@ -39,14 +40,14 @@ cursor : ./Cursor
 
 discord : ./Discord/Themes
 	# Applying discord themes (assuming you have EnhancedDiscord & glasscord)
-	cp -rf ./Discord/Themes /opt/EnhancedDiscord/
+	sudo cp -rf ./Discord/Themes /opt/EnhancedDiscord/
 	# TODO go ahead and apply the theme with ctrl+r
 
 discord-extensions : ./Discord/EnhancedDiscord ./Discord/glasscord.asar
 	# I'm assuming you installed discord the same way I did :)
 	
 	# First we install Enhanced discord for custom theme support
-	cp -r ./Discord/EnhancedDiscord /opt
+	sudo cp -r ./Discord/EnhancedDiscord /opt
 	# In ~/.config/discord/ find /x.x.xxx/modules/discord_desktop_core/index.js
 	# TODO Insert this at the top of the file:
 	# process.env.injDir = '/opt/EnhancedDiscord'; 
@@ -85,12 +86,14 @@ gtk : ./Gtk
 grub : font
 	# Mater - a utility to generate a minimal GRUB interface
 	# We need to keep it around to regenerate on new kernels
-	cd /opt && sudo git clone https://github.com/mateosss/matter.git && sudo chown mater $(USER):$(USER) 
+	cd /opt && \
+	sudo git clone https://github.com/mateosss/matter.git && \
+	sudo chown $(USER):$(USER) mater  
 	
 	# WARNING: I'm assuming you have the same boot config as me
 	sudo /opt/matter/matter.py \
-	-i debian microsoft-windows cog debian debian debian debian cog \
-	-ff /usr/share/fonts/fira-code/FiraCode-Bold.ttf -fn "Fira Code Bold" -fs 32 \
+	-i debian folder debian debian debian debian microsoft-windows cog \
+	-ff /usr/share/fonts/truetype/fira-code/FiraCode-Bold.ttf -fn "Fira Code Bold" -fs 32 \
 	-fg 839496 -bg 073642 -ic 93a1a1 -hl 2aa198
 
 	# You can completely remove Matter from your system with ./matter.py -u
@@ -122,19 +125,22 @@ sound : ./Sound
 spicetify :
 	# I'm assuming you installed spotify the same way I did :)
 	# Install spicetify to change themes
-	sudo mkdir /opt/spicetify-cli
+	sudo mkdir -p /opt/spicetify-cli
 	sudo chown ${USER}:${USER} /opt/spicetify-cli
 	export SPICETIFY_INSTALL=/opt/spicetify-cli && \
 	./Spotify/spicetify-cli/install.sh
 	# add link to path
-	sudo ln -s /opt/spicetify-cli/spicetify /usr/bin/spicetify
+	sudo ln -sf /opt/spicetify-cli/spicetify /usr/bin/spicetify
 	# Get permission to modify spotify files
-	sudo chown ${USER}:${USER} -R
+	sudo chown ${USER}:${USER} /usr/share/spotify -R
 	sudo chmod a+wr -R /usr/share/spotify -R
+	# backup original spotify
+	spicetify backup apply
 
 
 spotify : ./Spotify
-	# copy over theme files and set
+	# copy over theme files and apply
+	mkdir -p ~/.config/spicetify/Themes
 	cp -r ./Spotify/SolarizedDark ~/.config/spicetify/Themes
 	spicetify config current_theme SolarizedDark
 	spicetify apply
@@ -146,10 +152,13 @@ theme-scheduler :
 
 
 webapps : 
+	$(MAKE) -C WebApps dev
 	$(MAKE) -C WebApps all
 	$(MAKE) -C WebApps install
 
+
 window-decorations : ./Aurorae
 	# To apply window decorations just drop em in your home folder
+	mkdir -p ~/.local/share/aurorae/themes/
 	cp -rf Aurorae/Solarized-Sweet-Dark ~/.local/share/aurorae/themes/Solarized-Sweet-Dark
 	cp -rf Aurorae/Solarized-Sweet-Light ~/.local/share/aurorae/themes/Solarized-Sweet-Light
