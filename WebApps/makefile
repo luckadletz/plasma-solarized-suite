@@ -49,7 +49,8 @@ google-calendar :
 	https://calendar.google.com/calendar/r $(BUILD_DIR)
 
 trello :
-	nativefier $(OPTIONS) https://trello.com/luckadletz/boards $(BUILD_DIR)
+	nativefier $(OPTIONS) --internal-urls ".*?(google|trello|atlassian).*?" \
+	https://trello.com/luckadletz/boards $(BUILD_DIR)
 
 todoist : 
 	nativefier $(OPTIONS) --internal-urls ".*?(google|todoist).*?" \
@@ -69,10 +70,11 @@ netflix :
 plex : 
 	nativefier $(OPTIONS) https://app.plex.tv/desktop $(BUILD_DIR)
 
+twitch-tv:
+	nativefier $(OPTIONS) https://www.twitch.tv/directory $(BUILD_DIR)
 
 roll-20 :
 	nativefier $(OPTIONS) https://app.roll20.net $(BUILD_DIR)
-
 
 wikipedia :
 	nativefier $(OPTIONS) https://en.wikipedia.org/wiki/Main_Page $(BUILD_DIR)

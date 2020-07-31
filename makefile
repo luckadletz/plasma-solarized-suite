@@ -91,7 +91,7 @@ grub : font
 	# We need to keep it around to regenerate on new kernels
 	cd /opt && \
 	sudo git clone https://github.com/mateosss/matter.git && \
-	sudo chown $(USER):$(USER) mater  
+	sudo chown $(USER):$(USER) matter  
 	
 	# WARNING: I'm assuming you have the same boot config as me
 	sudo /opt/matter/matter.py \
