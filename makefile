@@ -62,6 +62,7 @@ discord-extensions : ./Discord/EnhancedDiscord ./Discord/glasscord.asar
 	# Copy glasscord.asar to discord and inject into package.json
 	sudo cp -f ./Discord/glasscord.asar /usr/share/discord/resources/app/
 	# TODO replace   "main": "...", with "main": "./glasscord.asar"
+	sudo cp ./Discord/config.json /opt/EnhancedDiscord/config.json
 
 
 font : ./Font
