@@ -22,3 +22,6 @@
 [submodule "ThemeScheduler/Yin-Yang"]
 	path = ThemeScheduler/Yin-Yang
 	url = https://github.com/luckadletz/Yin-Yang.git
+[submodule "WebApps/nativefier-freedesktop"]
+	path = WebApps/nativefier-freedesktop
+	url = https://github.com/alxlg/nativefier-freedesktop.git
