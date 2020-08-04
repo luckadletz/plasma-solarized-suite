@@ -1,7 +1,7 @@
 # Custom Nativefier web apps for Luc Kadletz
 
-BUILD_DIR = ./build
-PUB_DIR = /opt
+BUILD_DIR = $(PWD)/build
+PUB_DIR = /opt/WebApps
 
 OPTIONS = -n $@ \
 --browserwindow-options '{"webPreferences":{"sandbox":false}}'\
@@ -21,8 +21,16 @@ MEH_APPS = mit-open-courseware intuit-mint
 
 all : $(APPS)
 
-install : 
-	$(foreach app, $(APPS), ./install_webapp.sh $(BUILD_DIR) $(PUB_DIR) $(app);)
+beta : $(BETA_APPS)
+
+meh : $(MEH_APPS)
+
+all-test : $(APPS) $(BETA_APPS) $(MEH_APPS)
+
+install : $(BUILD_DIR)
+	for APP in $(BUILD_DIR)/* ; do \
+		$(PWD)/install_webapp.sh $${APP} $(PUB_DIR)  ; \
+	done
 
 uninstall :
 	$(foreach app, $(APPS), sudo rm -i  /usr/bin/$(app);)
