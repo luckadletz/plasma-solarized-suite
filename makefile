@@ -61,8 +61,9 @@ discord-extensions : ./Discord/EnhancedDiscord ./Discord/glasscord.asar
 	sudo mv package.json ./app/package.json
 	# Copy glasscord.asar to discord and inject into package.json
 	sudo cp -f ./Discord/glasscord.asar /usr/share/discord/resources/app/
-	# TODO replace   "main": "...", with "main": "./glasscord.asar"
+	# TODO replace   "main": "...", with "main": "./glasscord.asar" in /usr/share/discord/resources/app/package.json
 	sudo cp ./Discord/config.json /opt/EnhancedDiscord/config.json
+	# TODO oops, I overwrote any EnhancedDiscord settings we had D:
 
 
 font : ./Font
@@ -156,7 +157,7 @@ spotify-cli :
 	# This one is for looking cool and going fast B)
 	sudo mkdir /opt/spotify-tui
 	curl https://github.com/Rigellute/spotify-tui/releases/download/v0.21.0/spotify-tui-linux.tar.gz
-
+	# I don't think that that curl command works ...
 
 touchpad-gestures :
 	sudo gpasswd -a $(USER) input
@@ -164,7 +165,9 @@ touchpad-gestures :
 	sudo make -C libinput-gestures install
 	libinput-gestures-setup autostart
 	libinput-gestures-setup start
-	#Dunno if this works yet
+	# TODO this def doesn't belong in my theme stuff
+	# Also, it uses the working directory as a build staging dir and doesn't clean up
+
 
 
 theme-scheduler :
