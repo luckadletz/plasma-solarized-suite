@@ -103,6 +103,13 @@ grub : font
 
 	# You can completely remove Matter from your system with ./matter.py -u
 
+	# TODO Matter doesn't give you a background by default, use grub-customizer to
+	# TODO Set GRUB_BACKGROUND="/boot/grub/themes/Matter/background.png" in /etc/default/grub
+	# TODO Also, have to tweak the debian bootstrapper to share bg
+	
+	# TODO Better yet, just save the modified config and install (still need matter for updates)
+
+	# TODO Set the plymouth theme to a custom one
 
 icons : ./Icons
 	# Copy the directories in Icons to user icons, this may take a while...
