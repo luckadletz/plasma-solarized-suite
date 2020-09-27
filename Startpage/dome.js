@@ -50,12 +50,9 @@ var sites = {
 
 			"Media": {
 				"Netflix"			: "https://www.netflix.com/browse",
-				"CrunchyRoll"		: "https://www.crunchyroll.com/",
 				"Plex"				: "https://app.plex.tv/desktop",
 				"Youtube"			: "https://youtube.com",
 				"Twitch"			: "https://www.twitch.tv/",
-				"TPB"				: "https://thepiratebay.org/",
-				"Limetorrents"		: "https://limetorrent.cc/"
 			},
 
 			"Research" : {
@@ -72,7 +69,8 @@ var sites = {
 				"Calendar"			: "https://calendar.google.com/calendar/r",
 				"Tesla"				: "https://www.tesla.com/teslaaccount",
 				"Photos"			: "https://photos.google.com/",
-				"Amazon"			: "https://smile.amazon.com"
+				"Amazon"			: "https://smile.amazon.com",
+				"Mint"				: "https://mint.intuit.com/overview.event"
 			},
 
 			"Development": {
@@ -85,14 +83,11 @@ var sites = {
 			"Fun": {
 				"XKCD"				: "https://www.xkcd.com/",
 				"SMBC"				: "https://www.smbc-comics.com/",
-				"The Oatmeal"		: "https://www.theoatmeal.com/comics"
-				"Mythic Spoiler"	: "http://www.mythicspoiler.com/",
+				"The Oatmeal"		: "https://www.theoatmeal.com/comics",
+				"Mythic Spoiler"	: "https://www.mythicspoiler.com/",
 				"EDHRec"			: "https://edhrec.com/",
-			},
-
-			"Financial":{
-				"Mint"				: "https://mint.intuit.com/overview.event"
 			}
+
 		};
 
 var search = "https://duckduckgo.com/";		// The search engine
