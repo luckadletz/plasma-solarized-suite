@@ -47,7 +47,7 @@ discord-extensions : ./Discord/EnhancedDiscord ./Discord/glasscord.asar
 	# I'm assuming you installed discord the same way I did :)
 	# (with a .deb)
 	# First we install Enhanced discord for custom theme support
-	sudo cp -r ./Discord/EnhancedDiscord /opt
+	sudo cp -rf ./Discord/EnhancedDiscord /opt
 	# In ~/.config/discord/ find /x.x.xxx/modules/discord_desktop_core/index.js
 	# TODO Insert this at the top of the file:
 	# process.env.injDir = '/opt/EnhancedDiscord'; 
@@ -89,7 +89,7 @@ gtk : ./Gtk
 
 
 grub : font
-	# Mater - a utility to generate a minimal GRUB interface
+	# Matter - a utility to generate a minimal GRUB interface
 	# We need to keep it around to regenerate on new kernels
 	cd /opt && \
 	sudo git clone https://github.com/mateosss/matter.git && \
@@ -98,7 +98,7 @@ grub : font
 	# WARNING: I'm assuming you have the same boot config as me
 	sudo /opt/matter/matter.py \
 	-i debian folder debian debian debian debian microsoft-windows cog \
-	-ff /usr/share/fonts/truetype/fira-code/FiraCode-Bold.ttf -fn "Fira Code Bold" -fs 32 \
+	-ff /usr/share/fonts/truetype/fira-code/FiraCode-Bold.ttf -fn "Fira Code Bold" -fs 11 \
 	-fg 839496 -bg 073642 -ic 93a1a1 -hl 2aa198
 
 	# You can completely remove Matter from your system with ./matter.py -u
