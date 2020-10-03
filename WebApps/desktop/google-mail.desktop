@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/google-mail-linux-x64/google-mail
+GenericName=Google Mail
+Icon=/opt/WebApps/google-mail-linux-x64/resources/app/icon.png
+Name=GMail
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/youtube-linux-x64/youtube
+GenericName=Online Videos
+Icon=/opt/WebApps/youtube-linux-x64/resources/app/icon.png
+Name=YouTube
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

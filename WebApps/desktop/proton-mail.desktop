@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/proton-mail-linux-x64/proton-mail
+GenericName=Secure Email
+Icon=/opt/WebApps/proton-mail-linux-x64/resources/app/icon.png
+Name=Proton Mail
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

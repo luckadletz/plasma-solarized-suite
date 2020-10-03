@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/microsoft-office-linux-x64/microsoft-office
+GenericName=Microsoft Office Online Suite
+Icon=/opt/WebApps/microsoft-office-linux-x64/resources/app/icon.png
+Name=Microsoft Office
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

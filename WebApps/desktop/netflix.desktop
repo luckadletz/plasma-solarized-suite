@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/netflix-linux-x64/netflix
+GenericName=Netflix Streaming
+Icon=/opt/WebApps/netflix-linux-x64/resources/app/icon.png
+Name=Netflix
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

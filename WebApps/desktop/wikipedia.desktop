@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/wikipedia-linux-x64/wikipedia
+GenericName=Online Encyclopedia
+Icon=/opt/WebApps/wikipedia-linux-x64/resources/app/icon.png
+Name=Wikipedia
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

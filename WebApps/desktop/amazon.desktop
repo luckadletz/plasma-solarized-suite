@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/amazon-linux-x64/amazon
+GenericName=Shop Online
+Icon=/opt/WebApps/amazon-linux-x64/resources/app/icon.png
+Name=Amazon
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/brainaural-linux-x64/brainaural
+GenericName=Binaural Wave Audio Generator
+Icon=/opt/WebApps/brainaural-linux-x64/resources/app/icon.png
+Name=Brainaural
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/plex-linux-x64/plex
+GenericName=Plex Streaming
+Icon=/opt/WebApps/plex-linux-x64/resources/app/icon.png
+Name=Plex
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

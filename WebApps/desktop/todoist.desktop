@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/todoist-linux-x64/todoist
+GenericName=To Do List
+Icon=/opt/WebApps/todoist-linux-x64/resources/app/icon.png
+Name=Todoist
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/roll-20-linux-x64/roll-20
+GenericName=Online Tabletop
+Icon=/opt/WebApps/roll-20-linux-x64/resources/app/icon.png
+Name=Roll 20
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

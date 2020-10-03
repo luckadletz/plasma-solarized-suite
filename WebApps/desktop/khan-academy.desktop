@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/khan-academy-linux-x64/khan-academy
+GenericName=Online Courses
+Icon=/opt/WebApps/khan-academy-linux-x64/resources/app/icon.png
+Name=Khan Academy
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

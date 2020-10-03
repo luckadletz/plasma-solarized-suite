@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/wolfram-linux-x64/wolfram
+GenericName=Computational Knowledge Engine
+Icon=/opt/WebApps/wolfram-linux-x64/resources/app/icon.png
+Name=Wolfram Alpha
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

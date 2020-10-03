@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/intuit-mint-linux-x64/intuit-mint
+GenericName=Mint Budgeting
+Icon=/opt/WebApps/intuit-mint-linux-x64/resources/app/icon.png
+Name=Mint
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

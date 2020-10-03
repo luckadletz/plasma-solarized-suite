@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Internet
+Comment=
+Exec=/opt/WebApps/mit-open-courseware-linux-x64/mit-open-courseware
+GenericName=MIT Online Courses
+Icon=/opt/WebApps/mit-open-courseware-linux-x64/resources/app/icon.png
+Name=MIT OpenCourseWare
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
