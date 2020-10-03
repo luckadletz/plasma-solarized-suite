@@ -90,7 +90,7 @@ var sites = {
 
 		};
 
-var search = "https://duckduckgo.com/";		// The search engine
+var search = "https://duckduckgo.com/?kae=t&kav=1&kw=n&kn=1&ku=1&kax=v241-5&k18=1&kj=cb4b16&kaa=d33682&kx=268bd2&k9=2aa198&k7=002b36&k8=93a1a1&k21=586e75&kt=Fira+Code&ks=m&ka=Fira+Code";		// The search engine
 var query  = "q";							// The query variable name for the search engine
 
 var pivotmatch = 0;
