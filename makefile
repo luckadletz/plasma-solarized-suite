@@ -82,6 +82,7 @@ fortune : ./Fortune/fortunes/*
 	for FORTUNE in $^ ; do \
 		./Fortune/install_fortune.sh $${FORTUNE} ; \
 	done
+	# TODO belongs in ansible-homelab, not part of theme
 
 
 gtk : ./Gtk
@@ -159,6 +160,7 @@ spotify : ./Spotify
 
 
 spotify-cli : 
+	# TODO belongs in ansible-homelab, not part of theme
 	# This one is for calling play / pause / whatever on cli
 	pip install spotify-cli-linux
 	# This one is for looking cool and going fast B)
@@ -186,7 +188,7 @@ webapps :
 	$(MAKE) -C WebApps dev
 	$(MAKE) -C WebApps all
 	$(MAKE) -C WebApps install
-
+	# TODO WebApps is a better fit for the ansible project (and should prob be it's own submodule)
 
 window-decorations : ./Aurorae
 	# To apply window decorations just drop em in your home folder
