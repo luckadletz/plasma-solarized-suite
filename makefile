@@ -7,13 +7,12 @@ cursor \
 discord \
 font \
 icons \
-spotify \
 kvantum \
-window-decorations \
+window-decorations 
+# spotify \
 # gtk \
 # theme-scheduler \
 # webapps
-	# S U C C E S S 
 
 dependencies :
 	sudo apt install python3 python3-pip npm
@@ -135,20 +134,20 @@ sound : ./Sound
 	# Change sounds in System Settings -> Personalization -> Notifications -> Plasma Workspace
 
 
-spicetify :
-	# I'm assuming you installed spotify the same way I did :)
-	# Install spicetify to change themes
-	sudo mkdir -p /opt/spicetify-cli
-	sudo chown ${USER}:${USER} /opt/spicetify-cli
-	export SPICETIFY_INSTALL=/opt/spicetify-cli && \
-	./Spotify/spicetify-cli/install.sh
-	# add link to path
-	sudo ln -sf /opt/spicetify-cli/spicetify /usr/bin/spicetify
-	# Get permission to modify spotify files
-	sudo chown ${USER}:${USER} /usr/share/spotify -R
-	sudo chmod a+wr -R /usr/share/spotify -R
-	# backup original spotify
-	spicetify backup apply
+# spicetify :
+	# # I'm assuming you installed spotify the same way I did :)
+	# # Install spicetify to change themes
+	# sudo mkdir -p /opt/spicetify-cli
+	# sudo chown ${USER}:${USER} /opt/spicetify-cli
+	# export SPICETIFY_INSTALL=/opt/spicetify-cli && \
+	# ./Spotify/spicetify-cli/install.sh
+	# # add link to path
+	# sudo ln -sf /opt/spicetify-cli/spicetify /usr/bin/spicetify
+	# # Get permission to modify spotify files
+	# sudo chown ${USER}:${USER} /usr/share/spotify -R
+	# sudo chmod a+wr -R /usr/share/spotify -R
+	# # backup original spotify
+	# spicetify backup apply
 
 
 spotify : ./Spotify
