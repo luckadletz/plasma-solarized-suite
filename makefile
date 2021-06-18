@@ -53,14 +53,14 @@ discord-extensions : ./Discord/EnhancedDiscord ./Discord/glasscord.asar
 	# require(`${process.env.injDir}/injection.js`);
 
 	# Now we install the glasscord estension for composition effects
-	sudo mkdir -p /usr/share/discord/resources/app
+	sudo mkdir -p /opt/Discord/resources/app
 	# Extract package.json file
-	cd /usr/share/discord/resources && \
+	cd /opt/Discord/resources && 
 	sudo asar ef app.asar package.json && \
 	sudo mv package.json ./app/package.json
 	# Copy glasscord.asar to discord and inject into package.json
-	sudo cp -f ./Discord/glasscord.asar /usr/share/discord/resources/app/
-	# TODO replace   "main": "...", with "main": "./glasscord.asar" in /usr/share/discord/resources/app/package.json
+	sudo cp -f ./Discord/glasscord.asar /opt/Discord/resources/app/
+	# TODO replace   "main": "...", with "main": "./glasscord.asar" in /opt/Discord/resources/app/package.json
 	sudo cp ./Discord/config.json /opt/EnhancedDiscord/config.json
 	# TODO oops, I overwrote any EnhancedDiscord settings we had D:
 
